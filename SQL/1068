@@ -1,0 +1,22 @@
+## 1068. Product Sales Analysis I ##
+
+# Problem Link - 
+https://leetcode.com/problems/product-sales-analysis-i/description/?envType=study-plan-v2&envId=top-sql-50
+
+# Problem Statement -
+Write a solution to report the product_name, year, and price for each sale_id in the Sales table.
+
+Return the resulting table in any order.
+
+
+# Query - 
+select 
+    Product.product_name,
+    Sales.year,
+    Sales.price
+from
+    Sales
+join    
+    Product 
+on  
+    Sales.product_id = Product.product_id;

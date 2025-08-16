@@ -1,0 +1,33 @@
+
+## 1280. Students and Examinations ##
+
+# Problem Link - 
+https://leetcode.com/problems/students-and-examinations/description/?envType=study-plan-v2&envId=top-sql-50
+
+# Problem Statement -
+Write a solution to find the number of times each student attended each exam.
+
+Return the result table ordered by student_id and subject_name.
+
+The result format is in the following example.
+
+
+# Query - 
+select
+    stud.student_id,
+    stud.student_name,
+    sub.subject_name,
+    count(exam.student_id) as attended_exams 
+from 
+    students as stud
+cross join 
+    subjects as sub 
+left join 
+    examinations as exam
+on 
+    stud.student_id = exam.student_id and sub.subject_name = exam.subject_name
+group by 
+    stud.student_id, sub.subject_name
+order by
+    stud.student_id, sub.subject_name;
+

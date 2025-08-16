@@ -1,0 +1,26 @@
+
+## 1934. Confirmation Rate ##
+
+
+# Problem Link 
+https://leetcode.com/problems/confirmation-rate/?envType=study-plan-v2&envId=top-sql-50
+
+
+## Problem statement - 
+Write a solution to find the number of times each student attended each exam.
+
+Return the result table ordered by student_id and subject_name.
+
+# Query
+
+select 
+    s.user_id,
+    ifnull(round((sum(case when action = "confirmed" then 1 else 0 end) /count(c.action)), 2), 0) as confirmation_rate
+from 
+    Signups s
+left join 
+    Confirmations c
+on 
+    s.user_id = c.user_id 
+group by 
+    s.user_id;

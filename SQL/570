@@ -1,0 +1,24 @@
+## 570. Managers with at Least 5 Direct Reports ##
+
+# Problem Link - 
+https://leetcode.com/problems/managers-with-at-least-5-direct-reports/?envType=study-plan-v2&envId=top-sql-50
+
+# Problem Statement -
+Write a solution to find managers with at least five direct reports.
+
+Return the result table in any order.
+
+
+# Query - 
+select 
+    e1.name
+from 
+    Employee e1
+join 
+    Employee e2
+on 
+    e1.id <> e2.id and e1.id = e2.managerId
+group by 
+    e2.managerId
+having 
+    count(*)> 4;

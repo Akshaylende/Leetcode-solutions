@@ -1,0 +1,20 @@
+## 620. Not boring movies ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/not-boring-movies/description/?envType=study-plan-v2&envId=top-sql-50
+
+# Problem Statement -
+Write a solution to report the movies with an odd-numbered ID and a description that is not "boring".
+
+Return the result table ordered by rating in descending order.
+
+# Query - 
+select 
+    *
+from 
+    Cinema  
+where 
+    id%2 <> 0 and description <> 'boring'
+order by 
+    rating desc;

@@ -1,0 +1,27 @@
+## 1633. Percentage of Users Attended a Contest ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/percentage-of-users-attended-a-contest/description/?envType=study-plan-v2&envId=top-sql-50
+
+# Problem Statement -
+Write a solution to find the percentage of the users registered in each contest rounded to two decimals.
+
+Return the result table ordered by percentage in descending order. In case of a tie, order it by contest_id in ascending order.
+
+# Query - 
+SELECT
+    r.contest_id, 
+    round(count(r.user_id)*100/ (select count(user_id)from users),2)
+    AS percentage
+FROM 
+    Users u
+JOIN
+    Register r
+ON
+    u.user_id = r.user_id
+GROUP BY 
+    r.contest_id
+ORDER BY
+    percentage DESC,
+    r.contest_id ASC;

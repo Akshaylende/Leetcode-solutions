@@ -1,0 +1,20 @@
+## 1045. Customers Who Bought All Products  ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/customers-who-bought-all-products/description/?envType=study-plan-v2&envId=top-sql-50
+
+# Problem Statement -
+Write a solution to report the customer ids from the Customer table that bought all the products in the Product table.
+
+Return the result table in any order.
+
+# Query - 
+select 
+    customer_id
+from 
+    Customer 
+group by 
+    customer_id
+having 
+    count(distinct product_key) = (select count(*) from product);

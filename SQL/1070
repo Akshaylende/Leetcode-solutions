@@ -1,0 +1,25 @@
+## 1070. Product Sales Analysis III ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/product-sales-analysis-iii/description/?envType=study-plan-v2&envId=top-sql-50
+
+# Problem Statement -
+Write a solution to find all sales that occurred in the first year each product was sold.
+
+For each product_id, identify the earliest year it appears in the Sales table.
+
+Return all sales entries for that product in that year.
+
+Return a table with the following columns: product_id, first_year, quantity, and price.
+
+# Query - 
+select 
+    product_id,
+    year as first_year,
+    quantity,
+    price
+from 
+    Sales
+where
+    (product_id, year) in (select s.product_id, min(year) from sales s group by s.product_id);

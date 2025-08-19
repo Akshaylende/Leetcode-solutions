@@ -1,0 +1,21 @@
+## 1789. Primary Department for Each Employee ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/primary-department-for-each-employee/description/?envType=study-plan-v2&envId=top-sql-50
+
+# Problem Statement -
+Employees can belong to multiple departments. When the employee joins other departments, they need to decide which department is their primary department. Note that when an employee belongs to only one department, their primary column is 'N'.
+
+Write a solution to report all the employees with their primary department. For employees who belong to one department, report their only department.
+
+Return the result table in any order.
+
+# Query - 
+select 
+    e.employee_id,
+    ifnull((select department_id from employee where employee_id = e.employee_id and primary_flag = "Y"),e.department_id) as department_id
+from 
+    Employee e
+group by 
+    e.employee_id;

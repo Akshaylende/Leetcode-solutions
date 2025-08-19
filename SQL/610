@@ -1,0 +1,18 @@
+## 610. Triangle Judgement ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/triangle-judgement/description/?envType=study-plan-v2&envId=top-sql-50
+
+# Problem Statement -
+Report for every three line segments whether they can form a triangle.
+
+Return the result table in any order.
+
+# Query -
+select 
+    *, 
+    if((x+y>z and x+z>y and y+z>x),"Yes","No") as triangle
+from 
+    Triangle;
+    

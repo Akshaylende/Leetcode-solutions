@@ -11,24 +11,56 @@ The test cases are generated so that only one person has the most friends.
 
 # Query - 
 with akshay as(
-select 
-    requester_id as id,
-    count(*) as num 
-from 
-    RequestAccepted
-group by 
-    requester_id
-union all
-select 
-    accepter_id as id,
-    count(*) as num 
-from 
-    RequestAccepted 
-group by 
-    accepter_id
+    select 
+        requester_id as id,
+        count(*) as num 
+    from 
+        RequestAccepted
+    group by 
+        requester_id
+    union all
+    select 
+        accepter_id as id,
+        count(*) as num 
+    from 
+        RequestAccepted 
+    group by 
+        accepter_id
 )
-select id, sum(num) as num
-from akshay 
-group by id 
-order by sum(num) desc
+select 
+    id, 
+    sum(num) as num
+from 
+    akshay 
+group by 
+    id 
+order by 
+    sum(num) desc
 limit 1
+
+# Approach 2 
+
+with cte as(
+    select 
+        requester_id as id 
+    from 
+        RequestAccepted
+    
+    union all
+    
+    select 
+        accepter_id as id 
+    from 
+        RequestAccepted
+)
+
+select 
+    id, 
+    count(*) as num
+from 
+    cte
+group by 
+    id
+order by 
+    num
+limit 1;

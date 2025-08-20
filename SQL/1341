@@ -1,0 +1,58 @@
+## 1341. Movie Rating ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/movie-rating/description/?envType=study-plan-v2&envId=top-sql-50
+
+# Problem Statement -
+Write a solution to:
+
+Find the name of the user who has rated the greatest number of movies. In case of a tie, return the lexicographically smaller user name.
+Find the movie name with the highest average rating in February 2020. In case of a tie, return the lexicographically smaller movie name.
+
+# Query - 
+select 
+    name as results
+from 
+    users
+where 
+    user_id = (select 
+                mr.user_id 
+               from 
+                MovieRating mr 
+               join 
+                users u 
+                on 
+                mr.user_id = u.user_id 
+               group by 
+                mr.user_id 
+               order by 
+                count(mr.rating) desc, u.name 
+                limit 1
+            )
+
+union all 
+
+select 
+    title as results 
+from 
+    movies 
+where 
+    movie_id = (
+        select 
+            mr.movie_id
+        from 
+            MovieRating mr
+        join 
+            Movies m 
+        on 
+            mr.movie_id = m.movie_id
+        where 
+            left(mr.created_at, 7) = "2020-02"
+        group by
+            mr.movie_id
+        order by 
+            avg(rating) desc, m.title
+        limit 1
+    );
+

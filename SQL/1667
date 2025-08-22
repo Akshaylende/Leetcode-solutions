@@ -1,0 +1,19 @@
+## 1667. FIX Names in a Table ##
+
+
+# Problem Link - 
+http://leetcode.com/problems/fix-names-in-a-table/description/?envType=study-plan-v2&envId=top-sql-50
+
+# Problem Statement -
+Write a solution to fix the names so that only the first character is uppercase and the rest are lowercase.
+
+Return the result table ordered by user_id.
+
+# Query - 
+select
+    user_id,
+    concat(upper(left(name, 1)), substr(name, 2))
+from 
+    Users
+order by 
+    user_id;

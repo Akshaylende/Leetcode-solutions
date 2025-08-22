@@ -1,0 +1,27 @@
+## 1327. List the products Ordered in a period ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/list-the-products-ordered-in-a-period/description/?envType=study-plan-v2&envId=top-sql-50
+
+# Problem Statement -
+Write a solution to get the names of products that have at least 100 units ordered in February 2020 and their amount.
+
+Return the result table in any order.
+
+# Query - 
+select 
+    p.product_name,
+    sum(o.unit) as unit 
+from 
+    Orders o
+join 
+    Products p 
+on 
+    o.product_id = p.product_id
+where
+    o.order_date between "2020-02-01" and "2020-02-29"
+group by 
+    o.product_id
+having 
+    sum(o.unit)>99;

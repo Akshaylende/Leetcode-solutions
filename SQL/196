@@ -1,0 +1,23 @@
+## 196. Delete Duplicate emails ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/delete-duplicate-emails/description/?envType=study-plan-v2&envId=top-sql-50
+
+# Problem Statement -
+Write a solution to delete all duplicate emails, keeping only one unique email with the smallest id.
+
+For SQL users, please note that you are supposed to write a DELETE statement and not a SELECT one.
+
+For Pandas users, please note that you are supposed to modify Person in place.
+
+After running your script, the answer shown is the Person table. The driver will first compile and run your piece of code and then show the Person table. The final order of the Person table does not matter.
+
+# Query - 
+delete  
+    r2
+from 
+    Person r1, Person r2
+where 
+    r1.email = r2.email  and    r1.id < r2.id;
+

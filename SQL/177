@@ -1,0 +1,23 @@
+## 177. Nth Highest Salary ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/nth-highest-salary/description/
+
+# Problem Statement -
+Write a solution to find the nth highest distinct salary from the Employee table. If there are less than n distinct salaries, return null.
+
+# Query - 
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+  RETURN (
+      # Write your MySQL query statement below.
+        select 
+            e.salary as getNthHighestSalary
+        from 
+            Employee e
+        where 
+            (select count(distinct salary) from Employee where salary > e.salary) = N-1
+        limit 1
+    );
+END

@@ -1,0 +1,22 @@
+## 176. Second Highest Salary ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/second-highest-salary/description/
+
+# Problem Statement -
+Write a solution to find the second highest distinct salary from the Employee table. If there is no second highest salary, return null (return None in Pandas).
+
+# Query - 
+select( 
+    select 
+        distinct salary 
+    from 
+        employee
+    order by 
+        salary desc
+    limit 1
+    -- To limit rows in results set
+    offset 1
+    -- where to start with is what offset is 
+) as SecondHighestSalary;

@@ -1,0 +1,25 @@
+## 262. Trips and Users ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/trips-and-users/description/
+
+# Problem Statement -
+The cancellation rate is computed by dividing the number of canceled (by client or driver) requests with unbanned users by the total number of requests with unbanned users on that day.
+
+Write a solution to find the cancellation rate of requests with unbanned users (both client and driver must not be banned) each day between "2013-10-01" and "2013-10-03" with at least one trip. Round Cancellation Rate to two decimal points.
+
+Return the result table in any order.
+
+# Query - 
+select
+    t.request_at as Day,
+    round(sum(if(t.status <> 'completed', 1, 0))/count(*), 2) as 'Cancellation Rate'
+from 
+    Trips t 
+where 
+    t.client_id not in (select users_id from Users where banned = 'Yes')
+    and t.driver_id not in (select users_id from Users where banned = "Yes")
+    and t.request_at between "2013-10-01" and "2013-10-03"
+group by 
+    t.request_at;

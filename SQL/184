@@ -22,3 +22,30 @@ on
     e.departmentId = d.id
 where 
     salary = (select max(salary) from Employee where departmentId = e.departmentId);
+
+
+# Approach 2 
+
+with cte as(
+    select 
+        *,
+        Dense_rank() over (
+            partition by e.departmentId
+            order by e.salary desc
+        ) as ranks
+    from 
+        Employee e
+)
+
+select 
+    d.name as Department,
+    c.name as Employee,
+    c.salary as salary 
+from  
+    cte c
+join 
+    Department d
+on 
+    c.departmentId = d.id
+where 
+    c.ranks = 1;

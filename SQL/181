@@ -1,0 +1,18 @@
+## 181. Employees earning more than their Managers ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/employees-earning-more-than-their-managers/description/
+
+# Problem Statement -
+Write a solution to find the employees who earn more than their managers.
+
+Return the result table in any order.
+
+# Query - 
+select 
+    e.name as Employee
+from 
+    Employee e
+where 
+    e.salary > (select salary from Employee where id = e.managerId)

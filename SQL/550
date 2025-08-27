@@ -9,7 +9,7 @@ Write a solution to report the fraction of players that logged in again on the d
 
 # Query - 
 select
-    round(count(a1.event_date)/count(distinct a1.player_id), 2) as fraction
+    round(count(a1.event_date)/(select count(distinct player_id) from Activity), 2) as fraction
 from 
     Activity a1
 join 
@@ -17,5 +17,6 @@ join
 on 
     a1.player_id = a2.player_id
 where 
-    a2.event_date - a1.event_date = 1
+    DATEDIFF(a2.event_date, a1.event_date) = 1
     and a1.event_date = (select min(event_date) from Activity where player_id = a1.player_id);
+

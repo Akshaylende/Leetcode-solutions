@@ -29,5 +29,15 @@ order by
     no_of_orders desc
 limit 1;
 
+# Approach 2
+select 
+    customer_number 
+from 
+    Orders
+group by 
+    customer_number
+order by 
+    count(*) desc
+limit 1;
 
 

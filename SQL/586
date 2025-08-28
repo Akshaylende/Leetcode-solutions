@@ -1,0 +1,33 @@
+
+## 586. Customers placing the largest number of orders ##
+
+
+# Problem Link - 
+https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/description/
+
+# Problem Statement -
+Write a solution to find the customer_number for the customer who has placed the largest number of orders.
+
+The test cases are generated so that exactly one customer will have placed more orders than any other customer.
+
+# Query/ Code - 
+with cte as(
+    select 
+        customer_number,
+        count(*) as no_of_orders
+    from 
+        Orders
+    group by 
+        customer_number
+)
+
+select 
+    customer_number
+from 
+    cte
+order by 
+    no_of_orders desc
+limit 1;
+
+
+

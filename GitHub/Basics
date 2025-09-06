@@ -1,0 +1,30 @@
+## Basic setup - 
+
+# set global user name 
+git config --global user.name "<Your name>"
+
+# set global user email
+git config --global user.email "<email>"
+
+
+## initializing repository 
+
+# cloning repository from url
+git clone <repository_url>
+
+# Initializing a new git repository  
+git init <project_name>
+
+
+## Making and Commiting Changes
+
+git status -  checking the status of working directory, staging files.
+
+git add <(.) - all or (<file_name>) - for specific file>  - adding files to the staging area
+
+git commit -m ""  - commit using message for staged files
+
+git commit -am "" - commit using message for all files unstaged ones also
+
+git diff --staged  -  show staged changes that are ready to be committed. 
+

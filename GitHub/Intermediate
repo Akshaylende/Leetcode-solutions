@@ -1,0 +1,49 @@
+## Git Branching and merging 
+
+// List out all the local branches 
+Git branch
+
+// Creating a new branch 
+git branch <branch_name>
+
+// switch to an existing branch 
+git checkout  <branch_name>
+
+// Create and switch to new branch in one command
+git checkout -b <branch_name>
+
+// Delete a local branch 
+git branch -d <branch_name>
+
+// Forced delete the local branch with unmerged changes
+git branch -D <branch_name>
+
+// merge the specificied branch history into current branch
+git merge <branch_name>
+
+// cancel a merge that resulted in a conflict
+git merge --abort
+
+
+## Remote Repositories 
+
+// list all remote repositories 
+git remote -v
+
+// add new remote repository with a url 
+git add remote <name> <repo_url>     -  name can be like origin by default 
+
+// download latest changes from the repository without merging them 
+git fetch <remote>
+
+// fetch and merge remote changes into current branch
+git pull
+
+// uploads local branch commit to remote repository 
+git push <remote> <branch_name>
+
+// push a new local branch to the remote repository 
+git push -u <remote> <branch_name>
+
+//delete branch on the remote repository 
+git push <remote> --delete <branch_name>

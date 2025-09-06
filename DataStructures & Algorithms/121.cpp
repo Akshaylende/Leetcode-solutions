@@ -26,5 +26,5 @@ public:
         return ans;
     }
 };
-//Time complexity - O(N)
-space - Dyanically
+// Time complexity - O(N)
+// Space Complexity  -  O(1)

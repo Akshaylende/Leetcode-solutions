@@ -1,0 +1,18 @@
+## Undoing Changes 
+
+// unstages the file but keep the changes in the working directory
+git reset <file >
+
+// discard local, unstaged changes in the specific file
+git checkout --<file_name>
+
+// Add changes or edit commit message of the recent commit.
+git commit --amend
+
+## Stashing
+// save your local, uncommited changes and revert your working directoy to the last commit. 
+git stash 
+
+// list all the stashed changes
+git stash list
+

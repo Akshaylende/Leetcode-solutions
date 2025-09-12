@@ -31,7 +31,7 @@ public:
                         while(k>j && nums[k] == nums[k-1])k--;
                         j++, k--;
                     }
-                    if(nums[i]+nums[j]+nums[k]< 0) j++;
+                    else if(nums[i]+nums[j]+nums[k]< 0) j++;
                     else k--;
                 }
             }

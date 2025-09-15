@@ -89,3 +89,56 @@ public:
     }
 };
 
+
+// optimized Inspace solution 
+// using -1 and 2 for conversion of live and dead values 
+
+
+class Solution {
+public:
+    void gameOfLife(vector<vector<int>>& board) {
+        int m = board.size();
+        int n = board[0].size();
+        for(int i=0; i<m; i++){
+            for(int j=0; j<n; j++){
+                int live_neigh = 0;
+                if(i-1>=0){
+                    if(j-1>=0){
+                        if(board[i-1][j-1]==1 || board[i-1][j-1] == -1) live_neigh++;
+                    }
+                    if(board[i-1][j] == 1 || board[i-1][j] == -1) live_neigh++; 
+                    if(j+1 < n){
+                        if(board[i-1][j+1] == 1 || board[i-1][j+1] == -1 ) live_neigh++;
+                    }
+              }
+              if(j-1>=0){
+                if(board[i][j-1] == 1 ||board[i][j-1] == -1 ) live_neigh++;
+              } 
+              if(j+1 < n){
+                if(board[i][j+1] == 1 || board[i][j+1] == -1 ) live_neigh++;
+              } 
+              if(i+1 <m){
+                if(j-1>=0){
+                    if(board[i+1][j-1] == 1 || board[i+1][j-1] == -1 ) live_neigh++;
+                }
+                if(board[i+1][j] == 1 or board[i+1][j] == -1) live_neigh++;
+                if(j+1<n){
+                    if(board[i+1][j+1] == 1 || board[i+1][j+1] == -1) live_neigh++;
+                }
+              }
+              if(board[i][j] == 0 && live_neigh == 3){
+                    board[i][j]= 2;
+              }
+              if(board[i][j] == 1 && (live_neigh <2 || live_neigh > 3)){
+                board[i][j] = -1;
+              }
+            }
+        }
+        for(int i=0; i< m; i++){
+            for(int j=0; j<n;j++){
+                if(board[i][j] == -1) board[i][j]=0;
+                if(board[i][j]==2) board[i][j] =1;
+            }
+        }
+    }
+};

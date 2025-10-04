@@ -70,3 +70,53 @@ public:
     cout<< param_1 << " "<< param_2 << " " << param_3 << endl;
     return 0;
  }
+
+
+// The above code will not work if we try to return random element as we remove element the position of removing will not be in order which leads to inconsistency in storage. 
+// so, we set the last element to the position of value which will be passed and then remove the last element
+
+class RandomizedSet {
+public:
+    vector<int> order;
+    unordered_map<int, int> mp;
+    RandomizedSet() {
+        
+    }
+    
+    bool insert(int val) {
+        if(mp.find(val) == mp.end()){
+            int N = order.size();
+            mp[val] = N;
+            order.push_back(val);
+            return true;
+        }    
+        return false;
+    }
+    
+    bool remove(int val) {
+        if(mp.find(val) != mp.end()){
+            int last = order.back();
+            int pos = mp[val];
+            mp[last] = pos;
+            order[pos] = last; 
+            order.pop_back();
+            mp.erase(val);
+            return true;
+        }
+        return false;   
+    }
+    
+    int getRandom() {
+        int N = order.size();
+        int index = rand() % N;
+        return order[index];
+    }
+};
+
+/**
+ * Your RandomizedSet object will be instantiated and called as such:
+ * RandomizedSet* obj = new RandomizedSet();
+ * bool param_1 = obj->insert(val);
+ * bool param_2 = obj->remove(val);
+ * int param_3 = obj->getRandom();
+ */

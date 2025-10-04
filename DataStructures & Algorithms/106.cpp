@@ -1,5 +1,5 @@
 /*
-## 106. Construct Binary tree form Inorder and Postorder Traversal ##
+## 106. Construct Binary tree from Inorder and Postorder Traversal ##
 
 
 # Problem Link - 

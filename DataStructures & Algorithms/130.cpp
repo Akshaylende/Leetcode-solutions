@@ -17,30 +17,50 @@ To capture a surrounded region, replace all 'O's with 'X's in-place within the o
 */
 // TC - O(m*n)
 // SC - O(1)
+
 class Solution {
 public:
-    void DFS(int x, int y, vector<vector<char>>& board){
-        board[x][y] = 'X';
+    void DFS(int x, int y, vector<vector<bool>>& visit, vector<vector<char>>& board){
+        int dir[] = {0, -1, 0, 1, 0};
         int r = board.size();
         int c = board[0].size();
-        int dir[5] = {0, -1, 0, 1, 0};
+        visit[x][y] = true;
         for(int i=0; i<4; i++){
             int new_x = x + dir[i];
             int new_y = y + dir[i+1];
-            if(new_x < r && new_y < c  && new_x >=0  && new_y >= 0 && board[new_x][new_y] == 'O')
-                DFS(new_x, new_y, board);
+            if(new_x >= 0 && new_x < r && new_y >=0 && new_y < c && board[new_x][new_y] == 'O'  && !visit[new_x][new_y] ){
+                DFS(new_x, new_y, visit, board);
+            }
         }
-
     }
     void solve(vector<vector<char>>& board) {
         int r = board.size();
         int c = board[0].size();
-        for(int i=1; i<r-1; i++){
-            for(int j=1; j<c-1; j++){
-                if(board[i][j] == 'O'){
-                    DFS(i, j, board);
+        vector<vector<bool>> visit(r, vector<bool> (c, false));
+        int i = 0;
+        for(int j = 0; j<c; j++){
+            if(board[i][j] == 'O' && !visit[i][j]){
+                DFS(i, j, visit, board);
+            }
+            if(board[r-1][j]=='O' && !visit[r-1][j])
+                DFS(r-1, j, visit, board);
+        }
+        int j=0;
+        for(int i=0; i<r; i++){
+            if(board[i][j] == 'O' && !visit[i][j]){
+                DFS(i, j, visit, board);
+            }
+            if(board[i][c-1]=='O' && !visit[i][c-1])
+                DFS(i, c-1, visit, board);
+        }
+
+        for(int i=0; i<r; i++){
+            for(int j=0; j<c; j++){
+                if(board[i][j] == 'O' && !visit[i][j]){
+                    board[i][j] = 'X';
                 }
             }
         }
+
     }
 };

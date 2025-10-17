@@ -47,3 +47,32 @@ public:
 
 
 
+# Approach 2 Finding minimum subarray and then comparing with the max_sum or totalsum - min_sum 
+
+Array =   [     max_prefix_sum     |     min_subarray_sum     |      max_suffix_sum      ]
+
+
+// TC - O(N)
+// SC - O(1)
+
+
+class Solution {
+public:
+    int maxSubarraySumCircular(vector<int>& nums) {
+        int curr_max = 0, curr_min = 0;
+        int min_sum = INT_MAX, max_sum = INT_MIN;
+        int sum = 0;
+        for(int i=0; i<nums.size();i++){
+            curr_max += nums[i];
+            if(curr_max > max_sum) max_sum = curr_max;
+            if(curr_max < 0) curr_max = 0;
+
+            curr_min += nums[i];
+            if(curr_min < min_sum) min_sum =curr_min;
+            if(curr_min > 0) curr_min = 0;
+            sum += nums[i]; 
+        }
+        if(sum  == min_sum) return max_sum;
+        return max(max_sum, sum - min_sum);
+    }
+};

@@ -48,3 +48,41 @@ public:
 };
 
 
+# Approach 2  - Optimized a bit 
+// TC - O((m+n)/2)
+// SC - O(1)
+ class Solution {
+public:
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        int n1 = nums1.size();
+        int n2 = nums2.size();
+        int mid  = (n1 + n2);
+        int i = 0, j = 0, first=0, last = 0;
+        for(int x = 0; x <=mid/2; x++){
+            first = last; 
+            if(i < n1 && j< n2){
+                if(nums1[i] <= nums2[j]){
+                    last = nums1[i];
+                    i++;
+                }
+                else{
+                    last = nums2[j];
+                    j++;
+                }
+            }  
+            else if(i < n1){
+                last = nums1[i];
+                i++;
+            }
+            else{
+                last = nums2[j];
+                j++;
+            }
+        }
+        if(mid % 2 == 0){
+            return (first+last)/2.00000; 
+        }
+       return last;
+    }
+};
+

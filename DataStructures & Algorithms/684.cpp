@@ -69,3 +69,44 @@ public:
         return {res.first, res.second};
     }
 };
+
+
+
+//  DFS Approach 
+
+// TC - O(N+E)
+// SC - O(N)
+
+
+class Solution {
+public:
+    bool isConnected(int src, int target, vector<vector<int>>& adj, vector<bool>& visit){
+        visit[src] = true;
+        if(src == target) return true;
+        bool isfound = false;
+        for(auto node : adj[src]){
+            if(!visit[node])
+                isfound = isfound || isConnected(node, target, adj, visit);
+        }
+        return isfound;
+    }
+
+    vector<int> findRedundantConnection(vector<vector<int>>& edges) {
+        int N = edges.size();
+        
+        vector<vector<int>>adj(N, vector<int> {});
+
+        for(auto edge: edges){
+            vector<bool> visit(N, false);
+
+            if(isConnected(edge[0]-1, edge[1]-1, adj, visit)){
+                return edge;
+            }
+
+            adj[edge[0]-1].push_back(edge[1]-1);
+            adj[edge[1]-1].push_back(edge[0]-1);
+        }
+        
+        return {};
+    }
+};

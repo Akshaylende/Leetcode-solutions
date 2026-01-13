@@ -39,3 +39,9 @@ public:
         return left || right;
     }
 };
+
+
+# Explanation
+1. The node with no childrens is a leaf node.
+2. we recursively call the function on smaller inputs by reducing the targetSum by root->val. 
+3. On the leaf node, we check if the targetsum == root->value thus by ensuring it matches with the path sum. then returing the call stack with true from there onwards

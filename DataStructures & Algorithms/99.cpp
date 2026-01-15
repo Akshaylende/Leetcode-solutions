@@ -55,7 +55,7 @@ public:
 
 
 
-Explanation -  
+# Explanation -  
 1. we have initialized three variables here first, second and last to track the inorder sequence
 2. prev to track root or first element of the sequence, first, second and last to track the violations
 3. first and second would be from first violation and the last would be optional if there will be two violations

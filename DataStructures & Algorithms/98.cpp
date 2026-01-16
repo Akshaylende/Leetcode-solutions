@@ -80,3 +80,8 @@ public:
         return check(root, LLONG_MIN, LLONG_MAX);
     }
 };
+
+# Explanation- 
+1. so the left side of the BST should have less values than the root and the right side should have greater values than the root.
+2. check for root value should greater than left minima and should not exceed the right maxima 
+3. a bounded range will ensure that the bst is valid or not. 

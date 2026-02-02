@@ -37,3 +37,10 @@ public:
         return -1;
     }
 };
+
+
+# Explanation - 
+1. The condition here is we can`t consider the first and the last element for a fair gameplay.
+2. So, we can precompute the Bob's score either by calculating sum or taking prefix or suffix arrays.
+3. Then, we can iterate over the array to check the first minimum level where the score is getting bigger than the rest of the level and returning it.
+4. Else, we are returning -1 if we are unable to get the first level. 

@@ -23,7 +23,7 @@ class Player{
 
 
 
-// Defining Board
+// Defining Board  cols, rows, connectN
 class Board{
     vector<vector<int>> Grid;
     int rows, cols, connectN;
@@ -36,12 +36,15 @@ class Board{
             fillBoard( 0);
         }
 
+        // Instantiate Board with a value   
         void fillBoard(int val){
             for(int i=0; i<rows; i++)
                 for(int j=0; j<cols; j++)
                     Grid[i][j] = val;
         }
 
+
+        // printing board status
         void printBoard(){
             for(int i =0; i< rows; i++){
                 for(int j =0; j< cols; j++){
@@ -57,7 +60,8 @@ class Board{
             }
         }
 
-
+        
+        // placing piece on the board
         int placePiece(int col, int piece){
             if(col<0 || col >= cols) return -1;
             for(int i = rows-1; i>=0; i--){
@@ -69,6 +73,8 @@ class Board{
             return -1;
         }
 
+
+        // checking if anyone has won or not
         bool checkWin(int row, int col, int piece){
             int count = 0;
             // horizontal
@@ -108,6 +114,8 @@ class Board{
         }
 };
 
+
+// Definning Game class , targetscore and board object 
 class Game{
     int targetScore, connectN;
     Board *b;
@@ -127,7 +135,7 @@ class Game{
             scores[players[1]->getName()] = 0;
         }
 
-    
+        // fair chance play
         bool playChance(Player *player){
             b->printBoard();
             int col;
@@ -143,6 +151,7 @@ class Game{
             return false;
         }
 
+        // Round play
         string playRound(){
             while(true){
                 for(auto player: players){
@@ -153,6 +162,8 @@ class Game{
             return "";
         }
 
+
+        // play method to start the battle
         void play(){
             int round = 0;
             int maxScore = 0;
@@ -172,6 +183,8 @@ class Game{
 
 };
 
+
+// Main method
 int main(){
     cout<<"In main"<<endl; 
     int r, c, cn, ts;

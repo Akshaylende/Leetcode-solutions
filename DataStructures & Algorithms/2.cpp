@@ -73,3 +73,9 @@ public:
         return head->next;
     }
 };
+
+
+// Explanation -
+1. Considering two variable as sum and carry and adding nodes
+2. use the same algorithm as merge two sorted arrays. 
+3. return head's next pointer 

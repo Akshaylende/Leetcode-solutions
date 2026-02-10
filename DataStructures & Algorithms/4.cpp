@@ -86,3 +86,7 @@ public:
     }
 };
 
+// Explanation - 
+1. Trying to loop till mid/2 while iterating through two arrays in increasing sequence.
+2. then checking if the total size is even or odd 
+3. accordingly returning the values.

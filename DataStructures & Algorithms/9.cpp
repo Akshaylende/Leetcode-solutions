@@ -42,3 +42,9 @@ public:
         return true;
     }
 };
+
+
+// Approach
+1. Add the digits into a vector or container. 
+2. using a loop iteration and two pointers one at the start and the second at the end
+3. check  if the values at two pointers differ? and return accordingly. 

@@ -16,7 +16,7 @@ Notice that you may not slant the container.
 
 # Query/ Code - 
 */
-/*
+
  TC - O(N)
  SC - O(1)
 
@@ -35,25 +35,11 @@ public:
         } 
         return maxarea; 
     }
-};
+}
 
-int main(){
-    cout<<maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])<<endl;
-    return 0;
-}
-class Solution {
-public:
-    int maxArea(vector<int>& height) {
-        int N = height.size();
-        int i=0, j = N-1;
-        int maxarea = INT_MIN;
-        while(i<j){
-            int width = j-i;
-            int heights = min(height[i], height[j]);
-            maxarea = max(maxarea, heights * width);
-            if(height[i]<height[j]) i++;
-            else j--;
-        } 
-        return maxarea; 
-    }
-}
+
+// Explanation
+
+1. Initialize two pointers one at the start and the other at the end. 
+2. start iterating the array and calculating maximum area by width * min height of the two pointer
+3. move the pointer from the shorter element till i<j 

@@ -37,3 +37,8 @@ int main(){
     cout<<longestCommonPrefix(["flower","flow","flight"])<<endl; //fl
     return 0;
 }
+
+// Approach
+1. Initialize a string of 0th index
+2. Iterate through the loop and check the numbers of characters that matches with the res string 
+3. shrink the res string till the matched index

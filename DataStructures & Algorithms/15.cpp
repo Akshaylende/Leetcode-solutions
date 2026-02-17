@@ -39,3 +39,9 @@ public:
         return res;
     }
 };
+
+
+// Approach 
+1. The array should be sorted first of __cpp_alias_templates
+2. start iterating with a for loop till n-2 and use two pointers to iterate over the remaining array. 
+3. move the pointers according to the target and add it to the result set.

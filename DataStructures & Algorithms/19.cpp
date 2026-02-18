@@ -45,3 +45,7 @@ public:
         return head;
     }
 };
+
+#Approach - 
+1. iterate till N from head 
+2. 

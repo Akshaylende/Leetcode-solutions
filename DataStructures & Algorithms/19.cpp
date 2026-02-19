@@ -47,5 +47,6 @@ public:
 };
 
 #Approach - 
-1. iterate till N from head 
-2. 
+1. Iterate till n the node from the head and mark it as end 
+2. secondly iterate with curr pointer pointing to the head at the start and loop over other nodes
+3. Iterate till the end->next == NULL and then move the curr->next to its next of next node so that we can remove the node

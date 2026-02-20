@@ -39,3 +39,8 @@ public:
         return st.empty() ? true : false;
     }
 };
+
+// Approach -
+1. Initialize a stack and Iterate through a loop.
+2. Check if the paranthesis is opening one if it is then add it to stack 
+3. else check for for possible first opposite parenthesis and return false if stack is empty or doesnot match with the parenthesis.

@@ -56,3 +56,9 @@ public:
         return head -> next;
     }
 };
+
+
+// Approach -
+1. Initialize an iterating pointer and assign it to a head
+2. loop for combined list and assign the nodes in sorted manner
+3. check if any nodes are remaining and assign them after iterating pointer 

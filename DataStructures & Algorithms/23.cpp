@@ -47,5 +47,12 @@ public:
     }
 }; 
 
+// Approach -
+1. Initialize a priority queue(minHeap) and iterate through vector
+2. Add list head in the pq at every iteration
+3. loop till the pq gets empty and moves the pointer to top node of pq and also adding the next node back into priority queue
+4. Return new head of the list.
+
+
 
 

@@ -57,3 +57,9 @@ public:
         return newHead;
     }
 };
+
+// Approach - 
+1. Count the number of nodes and initialize a Head pointer with value as -1.
+2. Iterate in a loop while count+K < number of nodes & considering three pointers prev, curr, temp, first
+3. loop till k nodes and reverse them in order
+4. return the new head

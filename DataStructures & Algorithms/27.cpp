@@ -48,3 +48,8 @@ int main(){
 }
 
 
+// Approach - 
+1. Iterate with two pointers i and j till i<=j
+2. check if j == val if it is reduce j--
+3. check if i == val swap it with value at index j 
+4. return ith index

@@ -34,3 +34,9 @@ int main(){
     return 0;
 }
 */
+
+
+// Approach -
+1. take the length of the needle in n 
+2. check substr from i and if it matches with the substring 
+3. return i 

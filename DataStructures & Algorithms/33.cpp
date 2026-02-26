@@ -48,3 +48,10 @@ public:
         return -1;
     }
 };
+
+// Approach - 
+1. Initialize two pointers one at the start and the other at the end.
+2. Iterate in a loop while low<=high, calculate mid
+3. check if value at low <= mid then we have sorted array from low to mid right ? 
+4. check for target value is in the search space boundary if it is then shrink the boundaries accordingly.
+5. repeat for right hand side of the mid and shrink the boundaries.

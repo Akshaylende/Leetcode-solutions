@@ -52,3 +52,8 @@ public:
         return {first, second};
     }
 };
+
+# Approach 
+1. Apply binary search to find the first occurence in the array.
+2. Apply binary search to find the last occurence in the array. 
+3. Return the first and the second in pair.

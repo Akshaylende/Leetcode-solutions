@@ -39,3 +39,8 @@ public:
         return low;
     }
 };
+
+# Approach 
+1. Apply binary search to find the target position
+2. if the element exist then it should be at the mid position 
+3. else normally we can insert it in the low pointer position

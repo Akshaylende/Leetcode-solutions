@@ -44,3 +44,11 @@ public:
         return true;
     }
 };
+
+
+// Approach -
+1. We have to check the rows columns and block scope incross to check for correctiveness.
+2. Initialize seperate maps for rows, columns and block scope with uordered set as values
+3. Iterate in a loop for rows and cols and block index will be (i/3)*3 + j/3
+4. check if the char is not '.' and then check for every other maps. 
+5. Then add those in maps and move to next iteration

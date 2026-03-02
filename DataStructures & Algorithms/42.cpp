@@ -39,3 +39,8 @@ int main(){
     cout<<trap([0,1,0,2,1,0,1,3,2,1,2,1])<<endl; // 6
     return 0;
 }
+
+// Approach -
+1. Make prefix and suffix arrays and fill the values
+2. then loop on the array and check for minimum of prefix and suffix and its difference between current height
+3. add these differences in a variable called result and return it.

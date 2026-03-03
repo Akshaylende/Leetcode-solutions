@@ -33,3 +33,7 @@ public:
         }
     }
 };
+
+// Approach - 
+1. move all the elements from i j to j i by looping on the upper triangular matrix
+2. secondly reverse every row by iterating till the middle and we got the desired output

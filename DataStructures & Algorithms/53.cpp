@@ -34,3 +34,9 @@ public:
         return maxt;
     }
 };
+
+
+
+//Approach - 
+1. Initialize max_till_now and curr sum variable. 
+2. Iterate for loop on a variable and apply kadane algorithm

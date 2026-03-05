@@ -46,3 +46,9 @@ public:
         return result;
     }
 };
+
+
+// Approach 
+1. Apply a while loop for row and col variable till m & n 
+2. loop in a spiral form by reducing the boundaries and area space
+3. print the element at every instant or iteration.

@@ -32,3 +32,9 @@ int main(){
 
 // Time Complexity - O(N)
 // Space Complexity - O(1)
+
+// Approach - 
+1. Initialize curr_step with first element of nums.
+2. Iterate through while loop on nums and check if the steps are less than 0 then break and return false.
+3. use greedy to update curr_step with max_reach from curr element or existing curr_reach -1..
+4. check if we reach at the last ele then only return true

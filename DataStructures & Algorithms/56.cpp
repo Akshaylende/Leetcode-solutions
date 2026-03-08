@@ -37,3 +37,8 @@ public:
         return overlaps;
     }
 };
+
+# Approach -
+1. sort the intervals in the ascending order of elements 
+2. Iterate through a for loop and check if curr interval -> start is less than the given interval -> end
+3. else push the interval and look for new interval

@@ -37,3 +37,8 @@ int main(){
     cout<< lengthOfLastWord(" fly me to the moon ") <<endl;
     return 0;
 }
+
+
+# Approach -
+1. Iterate with a for loop and check for the space char
+2. then check for if the length till that point is not zero or return length

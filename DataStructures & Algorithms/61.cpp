@@ -51,3 +51,9 @@ public:
         return newHead;
     }
 };
+
+// Approach -
+1. count the number of the nodes in linkedlist by traversing on it.
+2. Iterate from head till k-1 nodes and keep the curr pointer reference.
+3. set the curr->next to a newHead and traverse till the end by setting the last node ->next to initial head
+4. return the newhead pointer. 

@@ -58,3 +58,9 @@ public:
         return plus;
     }
 };
+
+
+// Approach -
+1. Iterate in a loop from n-1 to 0 and add 1 lastly
+2. then check for the carry case and handle it. 
+3. In last, if we have carry then add it by emplace function or so.

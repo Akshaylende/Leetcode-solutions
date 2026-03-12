@@ -35,3 +35,9 @@ public:
         return res;
     }
 };
+
+// Approach - 
+1. Apply binary search to find the square root. 
+2. Take low = 1 and high as x
+3. calculate mid and check if x/mid >= mid & save it in a possible ans. 
+4. Also consider low = mid + 1 or high = mid -1

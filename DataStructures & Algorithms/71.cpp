@@ -85,3 +85,10 @@ public:
         return res.length() == 1 ? res: res.substr(0, res.length());
     }
 };
+
+
+// Approach
+1. Initialize two stacks and Iterate in for loop
+2. check for path and add into stacks 
+3. empty stack with a string    
+

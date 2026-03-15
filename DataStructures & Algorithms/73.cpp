@@ -88,3 +88,10 @@ public:
         
     }
 };
+
+
+// Approach - 
+1. problem can be solved using two vectors like rows and colums by storing 1 or 0 according to the zeros in row and column
+2. Optimised approach would be -  Iterate the matrix/Grid 
+3. Make first row and column as ref to store zeros and ones to save space and use it as a reference row and column 
+4. Maintain a variable to store information about first row and column 

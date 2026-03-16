@@ -66,3 +66,10 @@ public:
         return false;
     } 
 };
+
+// Approach - 
+1. flatten the matrix into a linear vector or array
+2. keep the track for low and high pointer with high pointing to last element
+3. loop it and get a row as mid/n && col as mid % n 
+4. check if row and col index element is target then true
+5. else if target is greater then low = mid +1 or else high = mid -1

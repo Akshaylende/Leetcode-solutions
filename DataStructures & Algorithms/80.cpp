@@ -17,14 +17,6 @@ Do not allocate extra space for another array. You must do this by modifying the
 # Query/ Code - 
 */
 
-/*
-Intuition - using Two pointers 
-Step 1 - put two pointers, one at index 1 and the iterative pointer j at index 2.
-step 2 - Iterate the point by check nums[j] == nums[i-1] 
-step 3 - looping in for umique element meanwhile swapping j = i+1 if there needs to change elements on the go in place
-step 4 - Repeat these in combination with each other.
-step 5 - return the final digit.
-*/
 
 
 class Solution {
@@ -49,3 +41,11 @@ public:
 
 //  Time Complexity - O(N)
 //  Space Complexity - O(1)
+
+
+# Approach -
+Step 1 - put two pointers, one at index 1 and the iterative pointer j at index 2.
+step 2 - Iterate the point by check nums[j] == nums[i-1] 
+step 3 - looping in for umique element meanwhile swapping j = i+1 if there needs to change elements on the go in place
+step 4 - Repeat these in combination with each other.
+step 5 - return the final digit.

@@ -48,3 +48,7 @@ public:
         return newHead->next;
     }
 };
+
+Approach - 
+1. Iterate in a while loop and then iterate till the last 
+2. check if the same node exist and remove it accordingly.

@@ -48,3 +48,9 @@ public:
         return head -> next;
     }
 };
+
+// Approach -
+1. create a small and large pointer and create a dummy ptr for iteration. 
+2. store the ref. of the large ptr for connectivity
+3. iterate in loop to store the nodes in small ptr linkedlist and and large ptr linkedlist
+4. return the small ptr head 

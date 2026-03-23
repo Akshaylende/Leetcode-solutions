@@ -100,3 +100,8 @@ public:
         }
     }
 };
+
+// Approach 
+1. keep a variable k, i, j to iterate on arrays
+2. start a loop on both the arrays from the end and move accordingly. 
+3. check if j>0 and then iterate till the end

@@ -52,3 +52,9 @@ public:
         return head;
     }
 };
+
+
+# Approach -
+1. consider three pointer prev, curr, fast
+2. loop till curr reaches to the left and assign curr's prev to prev and fast to curr->next
+3. reverse the list till curr reaches to right 

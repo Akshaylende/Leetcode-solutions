@@ -38,3 +38,9 @@ vector<int> ans;
         return ans;
     }
 };
+
+
+# Approach
+1. Use recursion to solve the problem. 
+2. check if the root is null? else traverse to the left then value 
+3. then traverse to the right and in the end return answer

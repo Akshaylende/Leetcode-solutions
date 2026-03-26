@@ -29,3 +29,9 @@ public:
         return dp[n];
     }
 };
+
+# Approach -
+1. Initialize dp of size n+1,  with 1
+2. Iterate in a for loop from  2 to n 
+3. calculate total by iterating from j = 1 to j <=i and consider left as j - 1 and right as i-j 
+4. store the dp[i] = dp[left] * dp[right]

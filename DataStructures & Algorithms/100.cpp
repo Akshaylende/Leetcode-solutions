@@ -37,3 +37,8 @@ public:
         return isSameTree(p->left, q->left) && isSameTree(p->right, q->right); 
     }
 };
+
+// Approach -
+1. check if p & q both exists or return false
+2. check if p and q value are equal
+3. slides the call to the left and right

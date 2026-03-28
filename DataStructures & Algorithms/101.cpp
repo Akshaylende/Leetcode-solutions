@@ -37,3 +37,8 @@ public:
         return check(root->left, root->right);
     }
 };
+
+
+# Approach 
+1. check Recursively if left == right and left->val == right->val else false
+2. call recursively on left and right subtree

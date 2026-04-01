@@ -67,3 +67,9 @@ public:
         return ans;
     }
 };
+
+# Approach -
+1. Initialize a queue to store nodes and Iterate in a loop and push nodes in left to right order.
+2. Push a NULL at the end of the binary tree level. 
+3. check if the node isNULL and the queue isempty() then break out of the loop
+
